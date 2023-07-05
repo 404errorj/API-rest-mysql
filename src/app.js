@@ -20,6 +20,7 @@ app.use(express.json());
 
 // Utilisation des routes définies dans routes.js
 app.use('/user', userRoutes);
+app.use('/', (req, res, next)=>{ res.status(200).json({message: "c'est en ligne !"}) })
 
 // Gestionnaire d'erreurs
 app.use((err, req, res, next) => {
